@@ -1,3 +1,3 @@
 # ADECO
 
-* [Live Preview](https://mativve.github.io//)
+* [Live Preview](https://mativve.github.io/ADECO/)
