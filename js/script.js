@@ -1,4 +1,9 @@
 $(window).on('load', function () {
+    //preload
+    $("#preloader #image").fadeOut();
+    $("#preloader").delay(350).fadeOut("slow");
+    
+
     $(document).on("scroll", onScroll);
 
 
@@ -107,5 +112,5 @@ $(window).on('load', function () {
         });
     }
     $(document).on('scroll', checkMedia);
-    
+
 });

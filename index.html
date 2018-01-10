@@ -12,12 +12,17 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <div id="image">
+
+        </div>
+    </div>
     <nav>
         <div class="container">
             <ul>
                 <li class="logo">
                     <a href="#top">
-                        <h1>ADECO</h1>
+                        <h1><img src="img/logo.png" alt="ADECO"></h1>
                     </a>
                 </li>
                 <li><a href="#oferta">Oferta</a></li>
@@ -47,21 +52,18 @@
             <div class="row">
                 <div class="col-l">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    <span class="hlight">Natus ratione saepe tempore</span>
-                    qui adipisci sunt officia iste, accusamus, ad, nostrum labore aperiam, eligendi obcaecati. Quaerat aliquid a cumque molestiae, tenetur.</p>
-                    
+                        <span class="hlight">Natus ratione saepe tempore</span> qui adipisci sunt officia iste, accusamus, ad, nostrum labore aperiam, eligendi obcaecati. Quaerat aliquid a cumque molestiae, tenetur.</p>
+
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    <span class="hlight">Natus ratione saepe tempore</span>
-                    qui adipisci sunt officia iste, accusamus, ad, nostrum labore aperiam, eligendi obcaecati. Quaerat aliquid a cumque molestiae, tenetur.</p>
+                        <span class="hlight">Natus ratione saepe tempore</span> qui adipisci sunt officia iste, accusamus, ad, nostrum labore aperiam, eligendi obcaecati. Quaerat aliquid a cumque molestiae, tenetur.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    <span class="hlight">Natus ratione saepe tempore</span>
-                    qui adipisci sunt officia iste, accusamus, ad, nostrum labore aperiam, eligendi obcaecati. Quaerat aliquid a cumque molestiae, tenetur.</p>
+                        <span class="hlight">Natus ratione saepe tempore</span> qui adipisci sunt officia iste, accusamus, ad, nostrum labore aperiam, eligendi obcaecati. Quaerat aliquid a cumque molestiae, tenetur.</p>
                 </div>
                 <div class="col-r">
                     <video loop class="video-background" muted plays-inline>
-                          <source src="adeco.webm" type="video/webm">
+                          <source src="bram.webm" type="video/webm">
                     </video>
-                    <p class="descvideo">Film został przyspieszony</p>
+                    <p class="descvideo">*Film został przyspieszony</p>
                 </div>
             </div>
 
@@ -69,6 +71,7 @@
     </section>
 
     <section id="reali">
+        <h2>Realizacje</h2>
         <div class="row">
             <div class="col">
                 <a href="img/gal/bram1.jpg"><img src="img/gal/bram1.jpg" alt="123"></a>
@@ -100,22 +103,33 @@
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2>Kontakt</h2>
-            <div class="row">
-                <p>TODO:</p>
+        <div class="row">
+            <div class="col-l">
+                <div id="map"></div>
+            </div>
+            <div class="col-r">
+                <p><img src="img/logo.png" alt="ADECO" class="logo"></p>
+                <p>Krasińskiego 33-100 Tarnów</p>
+                <p>
+                    <a href="https://www.facebook.com/adeco.tarnow/" target="_blank"><img src="img/fb.png" alt="Ikona facebook"></a>
+                    <a href="https://www.youtube.com/channel/UCofBdDftK9R4iIhBYuQxWlA" target="_blank"><img src="img/yt.png" alt="Ikona youtube"></a>
+                </p>
+                <p><a href="mailto:gswider@op.pl">Napisz: gswider@op.pl</a></p>
+                <p><a href="tel:+48600962775">Zadzwoń: 600-962-775</a></p>
             </div>
         </div>
     </section>
 
+
+
     <footer>
         <div class="container">
-            <p>
-                
-            </p>
+            <p>ADECO &copy; 2018</p>
+            <p><a href="https://www.facebook.com/mativve/" target="_blank">Wykonanie: Mativve</a></p>
         </div>
     </footer>
-   
+
+
     <div class="fb-livechat">
         <div class="ctrlq fb-overlay"></div>
         <div class="fb-widget">
@@ -134,9 +148,157 @@
 
     <script src="js/script.js"></script>
     <script src="js/simpleLightbox.js"></script>
-    <script>
+    <script type="text/javascript">
         $('#reali a').simpleLightbox();
+
+        function initMap() {
+            // Styles a map in night mode.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 50.013427,
+                    lng: 20.9766382
+                },
+                zoom: 15,
+                styles: [{
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#242f3e'
+                        }]
+                    },
+                    {
+                        elementType: 'labels.text.stroke',
+                        stylers: [{
+                            color: '#242f3e'
+                        }]
+                    },
+                    {
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#746855'
+                        }]
+                    },
+                    {
+                        featureType: 'administrative.locality',
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#d59563'
+                        }]
+                    },
+                    {
+                        featureType: 'poi',
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#d59563'
+                        }]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#263c3f'
+                        }]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#6b9a76'
+                        }]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#38414e'
+                        }]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry.stroke',
+                        stylers: [{
+                            color: '#212a37'
+                        }]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#9ca5b3'
+                        }]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#746855'
+                        }]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry.stroke',
+                        stylers: [{
+                            color: '#1f2835'
+                        }]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#f3d19c'
+                        }]
+                    },
+                    {
+                        featureType: 'transit',
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#2f3948'
+                        }]
+                    },
+                    {
+                        featureType: 'transit.station',
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#d59563'
+                        }]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#17263c'
+                        }]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#515c6d'
+                        }]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.stroke',
+                        stylers: [{
+                            color: '#17263c'
+                        }]
+                    }
+                ]
+            });
+
+            var myLatLng = {
+                lat: 50.013427,
+                lng: 20.9766382
+            };
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'ADECO'
+            });
+        }
+
     </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUwzJmArGKDl5ytMZCF7cEcbKQK95lCiE&callback=initMap"></script>
 </body>
 
 </html>

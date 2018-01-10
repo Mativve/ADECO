@@ -18,14 +18,34 @@ body {
     font-family: "Ubuntu", Arial, sans-serif;
     background-color: #fff;
     font-size: 18px;
-    color: #212121;
+    color: #000;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    z-index: 1;
 }
+
+
+/*
+**
+Linki
+**
+*/
+
+a{
+    text-decoration: none;
+    color:#f27c0e;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover, a:focus{
+    color:#037dc0;
+}
+
 
 /*
 **
@@ -54,11 +74,15 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #4c4d4f;
+    color: #000;
     font-weight: bold;
     padding: 0.5em 1em;
     position: relative;
     transition: all 0.3s ease-in-out;
+}
+
+nav ul li:not(.logo) a:hover{
+    color: #000;
 }
 
 nav ul li:not(.logo) a:after,
@@ -84,12 +108,16 @@ nav ul li:not(.logo) a:before {
     opacity: 0;
 }
 
-nav ul li:not(.logo) a:hover:after, nav ul li:not(.logo) a.active:after {
+nav ul li:not(.logo) a:hover:after,
+nav ul li:not(.logo) a:focus:after,
+nav ul li:not(.logo) a.active:after {
     top: 0;
     opacity: 1;
 }
 
-nav ul li:not(.logo) a:hover:before, nav ul li:not(.logo) a.active:before {
+nav ul li:not(.logo) a:hover:before,
+nav ul li:not(.logo) a:focus:before,
+nav ul li:not(.logo) a.active:before {
     bottom: 0;
     opacity: 1;
 }
@@ -112,8 +140,15 @@ nav h1 {
     padding-left: 30px;
     position: relative;
     display: inline-block;
+    max-width: 220px;
 }
 
+nav h1 img {
+    width: 100%;
+    display: block;
+}
+
+/*
 nav h1:after,
 nav h1:before {
     content: '';
@@ -123,13 +158,9 @@ nav h1:before {
     width: 8px;
     height: 70%;
     -ms-transform: translateY(-50%) skew(-15deg, 0);
-    /* IE 9 */
     -webkit-transform: translateY(-50%) skew(-15deg, 0);
-    /* Safari */
     transform: translateY(-50%) skew(-15deg, 0);
-    /* Standard syntax */
 }
-
 nav h1:after {
     left: 0;
     background-color: #037dc0;
@@ -139,6 +170,7 @@ nav h1:before {
     left: 14px;
     background-color: #f27c0e;
 }
+*/
 
 /*
 **
@@ -178,12 +210,20 @@ header p {
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     width: 100%;
-    background: linear-gradient(to right, #fff 50%, #777);
+}
+
+.imagebg:before {
+    content: '';
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.65) 50%, rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
 }
 
 .imagebg img {
     width: 100%;
-    opacity: 0.5;
     display: block;
 }
 
@@ -191,32 +231,31 @@ header p {
 sections
 */
 
-
-section{
+section {
     padding: 10em 0;
     position: relative;
     display: block;
 }
 
-#oferta{
+#oferta {
     background-image: url("../img/stipes.png");
-    background-position-x:100%;
-    background-position-y:-140px;
+    background-position-x: 100%;
+    background-position-y: -140px;
     background-repeat: no-repeat;
     background-size: 20%;
 }
 
-section h2{
-    color:#f27c0e;
+section h2 {
+    color: #f27c0e;
     margin-bottom: 2em;
     font-size: 1.8rem;
 }
 
-section .hlight{
-    color:#037dc0;
+section .hlight {
+    color: #037dc0;
 }
 
-section .row{
+section .row {
     display: flex;
     align-items: stretch;
     flex-direction: row;
@@ -224,27 +263,28 @@ section .row{
 }
 
 section .row .col-l,
-section .row .col-r{
-    width:50%;
+section .row .col-r {
+    width: 50%;
 }
 
-section .col-l p{
+section .col-l p {
     padding-right: 20px;
 }
 
-section .col{
-    width:25%;
+section .col {
+    width: 25%;
     overflow: hidden;
     position: relative;
 }
 
-section p+p{
+section p + p {
     margin-top: 1.25em;
 }
 
 /*
 Video
 */
+
 .video-background {
     display: block;
     width: 100%;
@@ -253,18 +293,23 @@ Video
     box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
 }
 
-.descvideo{
+.descvideo {
     text-align: center;
     padding: 5px 0;
-    color:#888;
+    color: #888;
 }
 
 
 /*
 Gallery
 */
-#reali .row{
+
+#reali .row {
     flex-wrap: nowrap;
+}
+
+#reali h2{
+    text-align: center;
 }
 
 #reali .col {
@@ -274,17 +319,94 @@ Gallery
     margin: 0.2em;
 }
 
-#reali .col img{
+#reali .col img {
     display: block;
-    width:100%;
+    width: 100%;
     height: 100%;
     transition: all 0.4s ease-in-out;
 }
 
-#reali .col:hover img{
+#reali .col a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#reali .col a:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 13, 13, 0.5);
+    background-image: url("../img/zoom.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+#reali .col a:hover img,
+#reali .col a:focus img {
     transform: scale(1.2);
 }
 
+#reali .col a:hover:before,
+#reali .col a:focus:before {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*
+Sekcja kontakt
+*/
+
+#map {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+#contact {
+    padding: 0;
+}
+
+#contact .col-r {
+    padding: 2em 0;
+    text-align: center;
+}
+
+#contact .col-r img:not(.logo){
+    padding: 2em 0.5em;
+    width: 10%;
+}
+
+#contact .col-r img:not(.logo):hover{
+    transform: scale(1.2);
+}
+
+#contact .col-r img.logo {
+    width: 100%;
+    padding: 2em 12em;
+}
+
+#contact a+a{
+    margin-top: 2em;
+}
+
+/*
+**
+Stopka
+**
+*/
+footer{
+    padding: 5em 0 2em 0;
+}
 
 /*
 Facebook
@@ -331,16 +453,16 @@ Facebook
     opacity: 1;
 }
 
-.ctrlq.fb-button span{
+.ctrlq.fb-button span {
     position: absolute;
-    width:250px;
-    left:-260px;
-    top:50%;
+    width: 250px;
+    left: -260px;
+    top: 50%;
     transform: translateY(-50%);
     word-break: break-all;
     text-align: right;
     padding-right: 10px;
-    color:#212121;
+    color: #212121;
     background-color: #eee;
     border-radius: 15px;
     padding: 1em;
